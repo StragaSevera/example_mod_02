@@ -5,16 +5,20 @@ import cpw.mods.fml.common.SidedProxy
 import cpw.mods.fml.common.event.FMLInitializationEvent
 import cpw.mods.fml.common.event.FMLPostInitializationEvent
 import cpw.mods.fml.common.event.FMLPreInitializationEvent
+import net.minecraft.init.Blocks
 import ru.ought.example_mod_2.proxy.CommonProxy
 
-@Mod(modid = "example_mod_2", name = "Example Mod 2", version = "1.7.10-0.0.1")
+const val MODID = "example_mod_2"
+const val VERSION = "1.7.10-0.0.1"
+
+@Mod(modid = MODID, name = "Example Mod 2", version = VERSION)
 object ExampleMod2 {
     @JvmStatic
     @SidedProxy(clientSide = "ru.ought.example_mod_2.proxy.ClientProxy", serverSide = "ru.ought.example_mod_2.proxy.CommonProxy")
     lateinit var proxy: CommonProxy
 
     @JvmStatic
-    @Mod.InstanceFactory
+    @Mod.InstanceFactory // В качестве инстанса всегда подаем синглтончик
     fun instance() = ExampleMod2
 
     @Mod.EventHandler
@@ -25,6 +29,7 @@ object ExampleMod2 {
     @Mod.EventHandler
     fun init(e: FMLInitializationEvent) {
         proxy.init(e)
+        println("Hello World! Dirt block is ${Blocks.dirt.unlocalizedName}")
     }
 
     @Mod.EventHandler
