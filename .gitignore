@@ -1,0 +1,15 @@
+# Idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# Gradle
+build
+.gradle
+
+# Остальное
+run
+*.rar
+*.zip
