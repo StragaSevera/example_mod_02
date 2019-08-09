@@ -20,9 +20,9 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'forge'
 
-version = "1.0"
-group = "kwork"
-archivesBaseName = "KWork"
+version = "1.7.10-0.0.1"
+group = "ru.ought"
+archivesBaseName = "example_mod_2"
 
 targetCompatibility = JavaVersion.VERSION_1_8
 sourceCompatibility = JavaVersion.VERSION_1_8

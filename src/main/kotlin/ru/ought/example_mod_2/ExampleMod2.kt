@@ -1,21 +1,21 @@
-package kwork
+package ru.ought.example_mod_2
 
 import cpw.mods.fml.common.Mod
 import cpw.mods.fml.common.SidedProxy
 import cpw.mods.fml.common.event.FMLInitializationEvent
 import cpw.mods.fml.common.event.FMLPostInitializationEvent
 import cpw.mods.fml.common.event.FMLPreInitializationEvent
-import kwork.proxy.CommonProxy
+import ru.ought.example_mod_2.proxy.CommonProxy
 
-@Mod(modid = "kwork", name = "KWork", version = "1.0")
-object KWork {
+@Mod(modid = "example_mod_2", name = "Example Mod 2", version = "1.7.10-0.0.1")
+object ExampleMod2 {
     @JvmStatic
-    @SidedProxy(clientSide = "kwork.proxy.ClientProxy", serverSide = "kwork.proxy.CommonProxy")
+    @SidedProxy(clientSide = "ru.ought.example_mod_2.proxy.ClientProxy", serverSide = "ru.ought.example_mod_2.proxy.CommonProxy")
     lateinit var proxy: CommonProxy
 
     @JvmStatic
     @Mod.InstanceFactory
-    fun instance() = KWork
+    fun instance() = ExampleMod2
 
     @Mod.EventHandler
     fun pre(e: FMLPreInitializationEvent) {

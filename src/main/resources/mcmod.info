@@ -1,12 +1,12 @@
 [{
-  "modid": "kwork",
-  "name": "KWork",
-  "description": "KWork mod",
+  "modid": "example_mod_2",
+  "name": "Example Mod 2",
+  "description": "Example mod for learning Kotlin",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Ivasik"],
+  "authorList": ["StragaSevera"],
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
