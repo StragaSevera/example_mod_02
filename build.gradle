@@ -21,7 +21,7 @@ apply plugin: 'kotlin'
 apply plugin: 'forge'
 
 version = "1.7.10-0.0.1"
-group = "ru.ought"
+group = "ru.ought.example_mod_2"
 archivesBaseName = "example_mod_2"
 
 targetCompatibility = JavaVersion.VERSION_1_8

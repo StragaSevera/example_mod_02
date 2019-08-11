@@ -6,12 +6,10 @@ import cpw.mods.fml.common.event.FMLInitializationEvent
 import cpw.mods.fml.common.event.FMLPostInitializationEvent
 import cpw.mods.fml.common.event.FMLPreInitializationEvent
 import cpw.mods.fml.common.registry.GameRegistry
-import net.minecraft.block.Block
-import net.minecraft.enchantment.Enchantment
 import net.minecraft.init.Blocks
 import net.minecraft.init.Items
-import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
+import ru.ought.example_mod_2.items.EItems
 import ru.ought.example_mod_2.proxy.CommonProxy
 
 const val MODID = "example_mod_2"
@@ -35,13 +33,12 @@ object ExampleMod2 {
     @Mod.EventHandler
     fun init(e: FMLInitializationEvent) {
         proxy.init(e)
-        GameRegistry.addRecipe(ItemStack(Items.apple), "XXX", "XXX", "XXX", 'X', Blocks.leaves)
-        GameRegistry.addShapelessRecipe(ItemStack(Items.dye, 2, 1), Items.redstone, ItemStack(Items.dye, 1, 1))
-        GameRegistry.addSmelting(Blocks.stone, ItemStack(Blocks.stonebrick), 0.1f)
-
-        val sword = ItemStack(Items.stone_sword)
-        sword.addEnchantment(Enchantment.sharpness, 1)
-        GameRegistry.addShapelessRecipe(sword, Items.flint, Items.stone_sword)
+        GameRegistry.addRecipe(ItemStack(Items.apple),
+                "XXX", "XXX", "XXX",
+                'X', ItemStack(Blocks.leaves, 1, 0))
+        GameRegistry.addRecipe(ItemStack(EItems.pineCone),
+                "XXX", "XXX", "XXX",
+                'X', ItemStack(Blocks.leaves, 1, 1))
     }
 
     @Mod.EventHandler
